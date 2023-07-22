@@ -1,18 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const name1 = React.createElement("h2", {}, "Batman Op");
+const HeaderComponent = () => {
+  return (
+    <div>
+      <h1>Batman</h1> <h6>vs</h6> <h1>Superman</h1>
+    </div>
+  );
+};
 
-const name2 = React.createElement("h2", {}, "Old  Superman");
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const name3 = React.createElement("h1", {}, "VS");
-
-const container = React.createElement("div", { className: "container" }, [
-  name1,
-  name3,
-  name2,
-]);
-
-const newRoot = ReactDOM.createRoot(document.getElementById("root"));
-
-newRoot.render(container);
+root.render(<HeaderComponent />);
