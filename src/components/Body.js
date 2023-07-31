@@ -22,8 +22,9 @@ const BodyComponent = () => {
 
   return (
     <>
-      <div className="search">
+      <div className="search-container">
         <input
+          className="search-bar"
           type="text"
           name="search-fltr"
           placeholder="search"
@@ -33,6 +34,7 @@ const BodyComponent = () => {
           }}
         />
         <button
+          className="search-button"
           onClick={() => {
             const data = filterData(searchText, resturants);
             setResturants(data);

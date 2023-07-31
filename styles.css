@@ -6,29 +6,34 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
 }
 
 img {
   width: 150px;
-  height: 130px;
+  height: 40px;
   border-radius: 10px;
 }
 
 .header > ul {
   display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .header > ul > li {
-  padding: 8px;
-  list-style: none;
+  display: inline-block;
+  margin-left: 20px;
 }
 
 .resturant-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 25px;
 }
 
 .cards {
@@ -57,4 +62,37 @@ img {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 5px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.search-bar {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.search-button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.search-button:active {
+  background-color: #00478f;
 }
