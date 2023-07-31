@@ -1,5 +1,41 @@
-.container {
-  font-family: cursive;
-  font-weight: bolder;
-  background-color: aqua;
+* {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+img {
+  width: 150px;
+  height: 130px;
+  border-radius: 10px;
+}
+
+.header > ul {
+  display: flex;
+}
+
+.header > ul > li {
+  padding: 8px;
+  list-style: none;
+}
+
+.resturant-cards {
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cards {
+  border: 1px solid black;
+  height: fit-content;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
 }
