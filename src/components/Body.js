@@ -10,26 +10,16 @@ in the second argumnet which is a function we pass the state variable
 
 const BodyComponent = () => {
   //   let searchTxt = "KFC"; === const [searchText , setSearchText] = useState("KFC")
-
-  function filterData(searchText, restaurants) {
-    const fltrDt = restaurants.filter((dt) => {
-      return dt.info.name.includes(searchText);
+  function filterData(searchText, resturants) {
+    const flterData = resturants.filter((res) => {
+      return res.info.name.includes(searchText);
     });
-    return fltrDt;
+    return flterData;
   }
-
-  function toggle(correct) {
-    if (correct === "true") {
-      return "false";
-    } else {
-      return "true";
-    }
-  }
-
-  const [correct, setCorrect] = useState("true");
 
   const [searchText, setSearchText] = useState("");
-  const [restaurants, setRestaurants] = useState(restrauntList);
+  const [resturants, setResturants] = useState(restrauntList);
+
   return (
     <>
       <div className="search">
@@ -44,23 +34,15 @@ const BodyComponent = () => {
         />
         <button
           onClick={() => {
-            const data = filterData(searchText, restaurants);
-            setRestaurants(data);
+            const data = filterData(searchText, resturants);
+            setResturants(data);
           }}
         >
           Search Resturants
         </button>
       </div>
-      <h1
-        onClick={() => {
-          const data = toggle(correct);
-          setCorrect(data);
-        }}
-      >
-        {correct}
-      </h1>
       <div className="resturant-cards">
-        {restaurants.map((res) => {
+        {resturants.map((res) => {
           return <ResturantCardComponent {...res.info} key={res.info.id} />;
         })}
       </div>

@@ -1,16 +1,20 @@
 import { useState } from "react";
 
 const FooterComponent = () => {
+  // useState Practice
+
   function add(count) {
-    return count + 1;
+    return (count += 1);
   }
 
-  function sub(count) {
-    return count - 1;
+  function subtract(count) {
+    return (count -= 1);
   }
+
   const [count, setCount] = useState(0);
   return (
     <>
+      <h1> The Count Is : {count}</h1>
       <button
         onClick={() => {
           const increment = add(count);
@@ -20,11 +24,10 @@ const FooterComponent = () => {
         {" "}
         +{" "}
       </button>
-      <h1>{count}</h1>
       <button
         onClick={() => {
-          const decremenet = sub(count);
-          setCount(decremenet);
+          const decrement = subtract(count);
+          setCount(decrement);
         }}
       >
         {" "}

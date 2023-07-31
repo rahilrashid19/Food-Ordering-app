@@ -8,10 +8,16 @@ const ResturantCardComponent = ({
 }) => {
   return (
     <div className="cards">
-      <img src={CDN_IMG_URL + cloudinaryImageId} alt="" />
-      <h1>{name}</h1>
-      <h4>{avgRating} stars</h4>
-      <h6>{cuisines.join(" , ")}</h6>
+      <img
+        className="restaurant-card-image"
+        src={CDN_IMG_URL + cloudinaryImageId}
+        alt=""
+      />
+      <div className="restaurant-card-content">
+        <h1 className="restaurant-card-name">{name}</h1>
+        <h4>{avgRating} stars</h4>
+        <h6>{cuisines.join(" , ")}</h6>
+      </div>
     </div>
   );
 };
