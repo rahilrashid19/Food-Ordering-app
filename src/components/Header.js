@@ -1,4 +1,16 @@
+import { useState } from "react";
+
 const HeaderComponent = () => {
+  const [authText, setAuthText] = useState("SingIn");
+
+  function toggleData(text) {
+    if (text === "SignIn") {
+      return "SignOut";
+    } else {
+      return "SignIn";
+    }
+  }
+
   return (
     <div className="header">
       <img
@@ -6,11 +18,22 @@ const HeaderComponent = () => {
         alt="logo"
       />
       <ul>
-        <li>Home</li>
+        <li href="/">Home</li>
         <li>About Us</li>
         <li>Contact Us</li>
         <li>Careers</li>
       </ul>
+
+      <button
+        id="auth-button"
+        className="sign-in"
+        onClick={() => {
+          const toggle = toggleData(authText);
+          setAuthText(toggle);
+        }}
+      >
+        {authText}
+      </button>
     </div>
   );
 };

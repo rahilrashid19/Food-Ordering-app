@@ -96,3 +96,55 @@ img {
 .search-button:active {
   background-color: #00478f;
 }
+
+.shimmer-box {
+  background-color: #f0f0f0;
+  padding: 16px;
+  border-radius: 4px;
+}
+
+.shimmer-line {
+  height: 12px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 25%,
+    #e0e0e0 50%,
+    transparent 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  margin-bottom: 8px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+#auth-button {
+  background-color: #007bff; /* Default color for sign-in */
+  color: #ffffff; /* White text color */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+#auth-button.sign-out {
+  background-color: #dc3545; /* Red color for sign-out */
+}
+
+#auth-button:hover {
+  background-color: #0056b3; /* Darker shade of blue on hover */
+}
+
+#auth-button.sign-out:hover {
+  background-color: #c82333; /* Darker shade of red on hover */
+}

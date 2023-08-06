@@ -16,7 +16,7 @@ const ResturantCardComponent = ({
       <div className="restaurant-card-content">
         <h1 className="restaurant-card-name">{name}</h1>
         <h4>{avgRating} stars</h4>
-        <h6>{cuisines.join(" , ")}</h6>
+        {/* <h6>{cuisines.join(" , ")}</h6> */}
       </div>
     </div>
   );
