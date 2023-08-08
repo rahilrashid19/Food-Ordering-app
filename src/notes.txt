@@ -1,0 +1,26 @@
+1. Never Create a new component inside another component... because when the rendering happens the nested component will be rendered everytime..
+
+2. Never use useState hook inside an if statement or for loop because it will cause inconstency..
+
+3. useState is a hook which react gives us to create a local state variable , so never use this hook outside the functional component..
+
+****FOR ROUTING****
+
+1. import createBrowserRouter from react-router-dom..
+
+2. create router from createBrowserRouter . it will be an array of objects in which each object will be a path.. eg below
+
+const appRouter = createBrowserRouter([
+    {
+        path:'/route',
+        element: 'component to load'
+    }
+])
+
+after creating the configuartion , we need to provide it to the app , 
+render function will alawys render whatever we pass in to it..
+
+so import routerProvider from the react-rouer-dom , and pass it to the root.render() with the router as appRouter.. eg below;
+
+root.render(<routerProvider router={appRouter}/>)
+
