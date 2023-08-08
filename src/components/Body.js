@@ -1,5 +1,4 @@
 import ResturantCardComponent from "./ResturantCard";
-import { restrauntList } from "../config";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shmimmer";
 /*
@@ -15,9 +14,9 @@ it takes two parameters , first one is call back function , and second one is de
 ******* NOTE *****************
 1. if there is no dependency array , useEffect will be called on every render after initial rendering..
 
-2. if there is a dependency array , useEffect will be called only on first render... (initial rendering)...
+2. if there is a dependency array , useEffect will be called only after first render... (initial rendering)...
 
-3. if there is a dependency array with some state variable in it , useEffect will be called every time the state variable changes....
+3. if there is a dependency array with some state variable or props in it , useEffect will be called every time the state variable changes after the initial render....
 
 ****NOTE******
 
