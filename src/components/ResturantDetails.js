@@ -1,49 +1,56 @@
 import { useState, useEffect } from "react";
 import { CDN_IMG_URL } from "../config";
 import { useParams } from "react-router";
-import Shimmer from "./Shmimmer";
+import Shimmer from "./Shimmer";
 
-const ResturantDetails = () => {
-  const [resturantData, setResturantData] = useState([]);
+const RestaurantDetails = () => {
+  const [restaurantData, setRestaurantData] = useState([]);
 
   const { id } = useParams();
 
   useEffect(() => {
-    getResturantDetails();
+    getRestaurantDetails();
   }, []);
 
-  async function getResturantDetails() {
+  async function getRestaurantDetails() {
     const data = await fetch(
       "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9713073&lng=77.5920295&restaurantId=" +
         id
     );
     const jsonData = await data.json();
-    setResturantData(jsonData);
+    setRestaurantData(jsonData);
   }
 
-  return resturantData.length === 0 ? (
+  return restaurantData.length === 0 ? (
     <Shimmer />
   ) : (
-    <>
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
       <img
-        className="res-logo"
         src={
           CDN_IMG_URL +
-          resturantData?.data?.cards[0]?.card?.card?.info?.cloudinaryImageId
+          restaurantData?.data?.cards[0]?.card?.card?.info?.cloudinaryImageId
         }
         alt=""
       />
-      <h1>{resturantData?.data?.cards[0]?.card?.card?.info?.name}</h1>
-      <h1>
-        {resturantData?.data?.cards[0]?.card?.card?.info?.costForTwoMessage}
-      </h1>
-      <h1>{resturantData?.data?.cards[0]?.card?.card?.info?.areaName}</h1>
-      <h1>
-        {resturantData?.data?.cards[0]?.card?.card?.info?.avgRating} stars
-      </h1>
-      <h1>{resturantData?.data?.cards[0]?.card?.card?.info?.city}</h1>
-    </>
+      <div className="p-4">
+        <h1 className="text-2xl font-bold mb-2">
+          {restaurantData?.data?.cards[0]?.card?.card?.info?.name}
+        </h1>
+        <p className="text-gray-600 mb-2">
+          {restaurantData?.data?.cards[0]?.card?.card?.info?.costForTwoMessage}
+        </p>
+        <p className="text-gray-600 mb-2">
+          {restaurantData?.data?.cards[0]?.card?.card?.info?.areaName}
+        </p>
+        <p className="text-yellow-500 mb-2">
+          {restaurantData?.data?.cards[0]?.card?.card?.info?.avgRating} stars
+        </p>
+        <p className="text-gray-600">
+          {restaurantData?.data?.cards[0]?.card?.card?.info?.city}
+        </p>
+      </div>
+    </div>
   );
 };
 
-export default ResturantDetails;
+export default RestaurantDetails;

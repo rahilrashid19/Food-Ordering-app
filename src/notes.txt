@@ -1,3 +1,15 @@
+/**
+ *  there are 2 types of exports
+ * one is named export where we directly export the function using export keyword , and while importing the same in another component we need to use {}
+ *
+ * second is default export which by which we can export only one thing and we dont need {} while importing
+ *  */
+
+
+ 
+
+
+
 1. Never Create a new component inside another component... because when the rendering happens the nested component will be rendered everytime..
 
 2. Never use useState hook inside an if statement or for loop because it will cause inconstency..

@@ -1,6 +1,6 @@
 import ResturantCardComponent from "./ResturantCard";
 import { useState, useEffect } from "react";
-import Shimmer from "./Shmimmer";
+import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 /*
 useState hook is a normal javascript function
@@ -59,27 +59,28 @@ const BodyComponent = () => {
 
   return (
     <>
-      <div className="search-container">
+      <div className="search-container flex items-center space-x-2">
         <input
-          className="search-bar"
+          className="search-bar px-3 py-2 rounded-md border focus:outline-none focus:ring focus:border-blue-300"
           type="text"
           name="search-fltr"
-          placeholder="search"
+          placeholder="Search"
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);
           }}
         />
         <button
-          className="search-button"
+          className="search-button px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
           onClick={() => {
             const data = filterData(searchText, resturants);
             setFlterResturants(data);
           }}
         >
-          Search Resturants
+          Search
         </button>
       </div>
+
       {flterResturants?.length === 0 ? (
         <Shimmer />
       ) : (
