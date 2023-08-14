@@ -1,6 +1,7 @@
 import ResturantCardComponent from "./ResturantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shmimmer";
+import { Link } from "react-router-dom";
 /*
 useState hook is a normal javascript function
 
@@ -84,7 +85,12 @@ const BodyComponent = () => {
       ) : (
         <div className="resturant-cards">
           {flterResturants?.map((res) => {
-            return <ResturantCardComponent {...res.info} key={res.info.id} />;
+            return (
+              <Link to={"/resturant/" + res.info.id} key={res.info.id}>
+                {" "}
+                <ResturantCardComponent {...res.info} />
+              </Link>
+            );
           })}
         </div>
       )}

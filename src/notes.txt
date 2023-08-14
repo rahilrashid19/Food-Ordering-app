@@ -22,5 +22,31 @@ render function will alawys render whatever we pass in to it..
 
 so import routerProvider from the react-rouer-dom , and pass it to the root.render() with the router as appRouter.. eg below;
 
-root.render(<routerProvider router={appRouter}/>)
+root.render(<routerProvider router={appRouter}/>)..
 
+for errors react-router-dom provides a hook called useRouterError , with which we can what kind of error we are getting and we can use that information..
+
+for nested routing we can use children key and it expects an array of objects.. eg below;
+const routes = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayoutComponent />,
+    errorElement: <Error />,
+    children: [
+      {
+        path: "/",
+        element: <BodyComponent />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+    ],
+  },
+]);
+
+in above example , the children array will route to the given Components.. and to load these children routes with fixed header and footer , react-router-dom provides us with a component named <Outlet/> , and we need to use this component between the elements which we want to be constant...

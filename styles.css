@@ -151,3 +151,8 @@ img {
 #auth-button.sign-out:hover {
   background-color: #c82333; /* Darker shade of red on hover */
 }
+
+.res-logo {
+  height: 20%;
+  width: 20%;
+}
