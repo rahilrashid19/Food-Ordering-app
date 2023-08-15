@@ -14,11 +14,14 @@ const HeaderComponent = () => {
 
   return (
     <div className="header flex items-center justify-between px-6 py-4 bg-blue-500 text-white">
-      <img
-        className="logo h-10"
-        src="https://walaan.com/storage/app/public/business/2023-05-29-647472b51447f.png"
-        alt="logo"
-      />
+      <Link to="/">
+        {" "}
+        <img
+          className="logo "
+          src="https://dcassetcdn.com/design_img/3700800/819300/22122319/pcesn2jqzsg9e5mkg79tfdhd4q_image.png"
+          alt="logo"
+        />
+      </Link>
       <ul className="flex space-x-4">
         <li>
           <Link to="/" className="hover:underline">
@@ -31,11 +34,13 @@ const HeaderComponent = () => {
           </Link>
         </li>
         <li>
-          <Link to="contact" className="hover:underline">
+          <Link to="/contact" className="hover:underline">
             Contact Us
           </Link>
         </li>
-        <li className="hover:underline">Careers</li>
+        <Link to="/careers" className="hover:underline">
+          Careers
+        </Link>
       </ul>
 
       <button

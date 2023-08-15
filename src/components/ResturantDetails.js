@@ -24,15 +24,16 @@ const RestaurantDetails = () => {
   return restaurantData.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+    <div className="flex flex-col md:flex-row gap-6">
       <img
         src={
           CDN_IMG_URL +
           restaurantData?.data?.cards[0]?.card?.card?.info?.cloudinaryImageId
         }
         alt=""
+        className="h-80"
       />
-      <div className="p-4">
+      <div className="p-4 md:w-1/2">
         <h1 className="text-2xl font-bold mb-2">
           {restaurantData?.data?.cards[0]?.card?.card?.info?.name}
         </h1>

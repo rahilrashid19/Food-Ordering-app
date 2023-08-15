@@ -4,6 +4,30 @@ const Shimmer = () => {
       <div className="shimmer-line"></div>
       <div className="shimmer-line"></div>
       <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
+      <div className="shimmer-line"></div>
     </div>
   );
 };
