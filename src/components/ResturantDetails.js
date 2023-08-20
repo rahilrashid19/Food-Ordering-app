@@ -11,7 +11,7 @@ const RestaurantDetails = () => {
   return restaurantData.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="flex flex-col md:flex-row gap-6 h-screen">
+    <div className="flex flex-col md:flex-row gap-6 h-[76vh]">
       <img
         src={
           CDN_IMG_URL +
