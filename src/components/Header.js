@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useStatus from "../utils/useStatus";
 
 const HeaderComponent = () => {
   const [authText, setAuthText] = useState("SignIn");
@@ -11,6 +12,8 @@ const HeaderComponent = () => {
       return "SignIn";
     }
   }
+
+  const isOnline = useStatus();
 
   return (
     <div className="header flex items-center justify-between px-6 py-4 bg-blue-500 text-white">
@@ -42,6 +45,8 @@ const HeaderComponent = () => {
           Careers
         </Link>
       </ul>
+
+      <h1>{isOnline ? "User Is Online 🟢" : "User Is Offline 🔴"}</h1>
 
       <button
         id="auth-button"

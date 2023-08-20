@@ -1,25 +1,12 @@
-import { useState, useEffect } from "react";
 import { CDN_IMG_URL } from "../config";
 import { useParams } from "react-router";
 import Shimmer from "./Shimmer";
+import useResturauntHook from "../utils/useResturauntsHook";
 
 const RestaurantDetails = () => {
-  const [restaurantData, setRestaurantData] = useState([]);
-
   const { id } = useParams();
 
-  useEffect(() => {
-    getRestaurantDetails();
-  }, []);
-
-  async function getRestaurantDetails() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9713073&lng=77.5920295&restaurantId=" +
-        id
-    );
-    const jsonData = await data.json();
-    setRestaurantData(jsonData);
-  }
+  const restaurantData = useResturauntHook(id);
 
   return restaurantData.length === 0 ? (
     <Shimmer />

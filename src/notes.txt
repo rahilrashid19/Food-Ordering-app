@@ -62,3 +62,27 @@ const routes = createBrowserRouter([
 ]);
 
 in above example , the children array will route to the given Components.. and to load these children routes with fixed header and footer , react-router-dom provides us with a component named <Outlet/> , and we need to use this component between the elements which we want to be constant...
+
+
+/*
+useState hook is a normal javascript function
+
+it returns us an array in which first element is the state variable and second element is the function to update that variable.
+in the second argumnet which is a function we pass the state variable..
+
+
+useEffect hook is also a normal javascript function...
+it takes two parameters , first one is call back function , and second one is dependency array...
+
+******* NOTE *****************
+1. if there is no dependency array , useEffect will be called on every render after initial rendering..
+
+2. if there is a dependency array , useEffect will be called only after first render... (initial rendering)...
+
+3. if there is a dependency array with some state variable or props in it , useEffect will be called every time the state variable changes after the initial render....
+
+****NOTE******
+
+wherever you change the state variable , it triggeres the reconciliation process and re renders the component
+
+*/
