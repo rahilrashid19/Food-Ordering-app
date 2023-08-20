@@ -16,16 +16,17 @@ const HeaderComponent = () => {
   const isOnline = useStatus();
 
   return (
-    <div className="header flex items-center justify-between px-6 py-4 bg-blue-500 text-white">
-      <Link to="/">
-        {" "}
-        <img
-          className="logo "
-          src="https://dcassetcdn.com/design_img/3700800/819300/22122319/pcesn2jqzsg9e5mkg79tfdhd4q_image.png"
-          alt="logo"
-        />
-      </Link>
-      <ul className="flex space-x-4">
+    <div className="header flex flex-col md:flex-row items-center justify-between px-4 md:px-6 py-4 bg-blue-500 text-white">
+      <div className="md:mr-6">
+        <Link to="/">
+          <img
+            className="logo w-20 md:w-auto"
+            src="https://dcassetcdn.com/design_img/3700800/819300/22122319/pcesn2jqzsg9e5mkg79tfdhd4q_image.png"
+            alt="logo"
+          />
+        </Link>
+      </div>
+      <ul className="md:flex space-x-4 mt-4 md:mt-0">
         <li>
           <Link to="/" className="hover:underline">
             Home
@@ -41,16 +42,25 @@ const HeaderComponent = () => {
             Contact Us
           </Link>
         </li>
-        <Link to="/careers" className="hover:underline">
-          Careers
-        </Link>
+        <li>
+          <Link to="/careers" className="hover:underline">
+            Careers
+          </Link>
+        </li>
+        <li>
+          <Link to="/instamart" className="hover:underline">
+            Instamart
+          </Link>
+        </li>
       </ul>
 
-      <h1>{isOnline ? "User Is Online 🟢" : "User Is Offline 🔴"}</h1>
+      <h1 className="mt-4 md:mt-0">
+        {isOnline ? "User Is Online 🟢" : "User Is Offline 🔴"}
+      </h1>
 
       <button
         id="auth-button"
-        className="sign-in bg-transparent hover:bg-white text-white hover:text-blue-500 border border-white px-4 py-2 rounded focus:outline-none"
+        className="mt-4 md:mt-0 sign-in bg-transparent hover:bg-white text-white hover:text-blue-500 border border-white px-4 py-2 rounded focus:outline-none"
         onClick={() => {
           const toggle = toggleData(authText);
           setAuthText(toggle);

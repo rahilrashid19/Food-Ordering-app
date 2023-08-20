@@ -1,3 +1,25 @@
+/*
+planning for the App
+
+1. Header Component
+   - Logo
+   -Navbar
+   -cart
+   search bar
+
+2. Body Component
+   - Resturant Card
+     - Resturant Image
+     - Resturant Name
+     - Resturant rating
+     -cusines
+
+3. Footer Component
+    - Links
+
+*/
+
+
 /**
  *  there are 2 types of exports
  * one is named export where we directly export the function using export keyword , and while importing the same in another component we need to use {}

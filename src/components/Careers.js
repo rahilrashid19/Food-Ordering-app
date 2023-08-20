@@ -2,7 +2,7 @@ import { Outlet, Link } from "react-router-dom";
 
 const Careers = () => {
   return (
-    <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className=" bg-gray-100 py-12 px-4 sm:px-6 lg:px-8 h-[76vh]">
       <div className="max-w-md mx-auto">
         <h2 className="text-3xl font-extrabold text-center text-gray-900">
           Join Our Team
