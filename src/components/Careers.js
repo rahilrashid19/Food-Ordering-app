@@ -1,3 +1,5 @@
+import { Outlet, Link } from "react-router-dom";
+
 const Careers = () => {
   return (
     <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
@@ -22,18 +24,19 @@ const Careers = () => {
                 </p>
               </div>
               <div className="px-4 py-4 sm:px-6 bg-gray-50">
-                <a
+                <Link
+                  to="apply"
                   href="#apply-link"
                   className="text-base font-medium text-indigo-600 hover:text-indigo-500"
                 >
                   Apply Now &rarr;
-                </a>
+                </Link>
               </div>
             </div>
-            {/* Add more job listings as needed */}
           </div>
         </div>
       </div>
+      <Outlet />
     </div>
   );
 };

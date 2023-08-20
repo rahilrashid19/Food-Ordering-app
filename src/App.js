@@ -9,6 +9,7 @@ import Error from "./components/Error";
 import ResturantDetails from "./components/ResturantDetails";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Careers from "./components/Careers";
+import ApplyHere from "./components/ApplyHere";
 
 /*
 planning for the App
@@ -62,6 +63,12 @@ const routes = createBrowserRouter([
       {
         path: "/careers",
         element: <Careers />,
+        children: [
+          {
+            path: "apply", // we dont use backslashes here because its a relative path & if we use a backslash it will act as localhost:1234/apply , so we dont use
+            element: <ApplyHere />,
+          },
+        ],
       },
       {
         path: "/resturant/:id",
