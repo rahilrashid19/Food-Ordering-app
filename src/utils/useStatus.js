@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
 const useStatus = () => {
-  function handleOnline() {
-    return setStatus(true);
-  }
+  const handleOnline = () => {
+    setStatus(true);
+  };
 
-  function handleOffline() {
-    return setStatus(false);
-  }
+  const handleOffline = () => {
+    setStatus(false);
+  };
 
   const [status, setStatus] = useState(true);
 
@@ -15,10 +15,10 @@ const useStatus = () => {
     window.addEventListener("online", handleOnline);
     window.addEventListener("offline", handleOffline);
 
-    return (
-      window.removeEventListener("online", handleOnline),
-      window.removeEventListener("offline", handleOffline)
-    );
+    return () => {
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline);
+    };
   }, []);
 
   return status;
