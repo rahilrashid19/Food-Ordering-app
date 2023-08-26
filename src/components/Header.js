@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useStatus from "../utils/useStatus";
+import UserContext from "../utils/UserContext";
 
 const HeaderComponent = () => {
   const [authText, setAuthText] = useState("SignIn");
@@ -14,6 +15,8 @@ const HeaderComponent = () => {
   }
 
   const isOnline = useStatus();
+
+  const { user } = useContext(UserContext);
 
   return (
     <div className="header flex flex-col md:flex-row items-center justify-between px-4 md:px-6 py-4 bg-blue-500 text-white">
@@ -55,7 +58,7 @@ const HeaderComponent = () => {
       </ul>
 
       <h1 className="mt-4 md:mt-0">
-        {isOnline ? "User Is Online 🟢" : "User Is Offline 🔴"}
+        {isOnline ? user.name + " Is Online 🟢" : user.name + " Is Offline 🔴"}
       </h1>
 
       <button

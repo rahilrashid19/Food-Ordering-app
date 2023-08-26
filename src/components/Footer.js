@@ -2,8 +2,11 @@ import FacebookIcon from "../assets/facebook.svg";
 import TwitterIcon from "../assets/twitter.svg";
 import InstagramIcon from "../assets/instagram.svg";
 import LinkedInIcon from "../assets/linkedin.svg";
+import { useContext } from "react";
+import UserContext from "../utils/UserContext";
 
 const Footer = () => {
+  const { user } = useContext(UserContext);
   return (
     <footer className={`bg-gray-800 text-white py-6 `}>
       <div className="container mx-auto flex flex-col items-center">
@@ -33,6 +36,10 @@ const Footer = () => {
             <img src={LinkedInIcon} alt="LinkedIn" className="h-6 w-6" />
           </a>
         </div>
+        <p className="mt-4 text-sm">
+          This Website Is Designed By {user.name} & You Can Contact us at{" "}
+          {user.email}
+        </p>
         <p className="mt-4 text-sm">
           &copy; {new Date().getFullYear()} Crave Cuisines. All rights reserved.
         </p>
