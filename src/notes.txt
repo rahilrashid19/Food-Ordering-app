@@ -108,3 +108,54 @@ it takes two parameters , first one is call back function , and second one is de
 wherever you change the state variable , it triggeres the reconciliation process and re renders the component
 
 */
+
+
+
+// REDUX //
+
+1. created a store ---- configureStore() --- IMPORTED FROM RTK
+
+2. Provided The Store To our App --- imported provider component from react-redux and wrapped our app into provider , it accepts a store **store = {store}** prop which should be named exactly as store...
+
+3. created a slice called cartSlice ---- imported createSlice() --- IMPORTED FROM RTK
+
+it accepts an object like below :-
+
+
+createSlice(
+  {
+  name:'cart',
+  initialState :{
+    items: [],
+  },
+  reducers : {
+    addItem = (state , action)=>{
+      state.items.push(actionPayload)
+      // dont return anything from reducers
+    }
+
+    removeItem = (state , action)=>{
+      state.items.pop()
+    }
+
+    clearCart = (state)=>{
+      state.items = [];
+    }
+  }
+}
+)
+
+export const {addItem , removeItem , clearCart} from createSlice.actions
+
+export default createSlice.reducer;
+
+
+then we imported the cartSlice into our store -- import cartSlice from 'path
+
+configureStore({
+  reducer: {
+    cart: cartSlice,
+    user: userSlice,
+    admin : adminSlice,
+  }
+})

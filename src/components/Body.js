@@ -93,7 +93,7 @@ const BodyComponent = () => {
       {flterResturants?.length === 0 ? (
         <Shimmer />
       ) : (
-        <div className="resturant-cards">
+        <div className="resturant-cards min-h-[61vh]">
           {flterResturants?.map((res) => {
             return (
               <Link to={"/resturant/" + res.info.id} key={res.info.id}>

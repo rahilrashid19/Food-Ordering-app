@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useStatus from "../utils/useStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const HeaderComponent = () => {
   const [authText, setAuthText] = useState("SignIn");
@@ -15,6 +16,8 @@ const HeaderComponent = () => {
   }
 
   const isOnline = useStatus();
+
+  const cartItems = useSelector((store) => store.cart.items);
 
   const { user } = useContext(UserContext);
 
@@ -53,6 +56,11 @@ const HeaderComponent = () => {
         <li>
           <Link to="/instamart" className="hover:underline">
             Instamart
+          </Link>
+        </li>
+        <li>
+          <Link to="/cart" className="hover:underline">
+            Cart - {cartItems.length}
           </Link>
         </li>
       </ul>

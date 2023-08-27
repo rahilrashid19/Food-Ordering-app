@@ -2,9 +2,17 @@ import { CDN_IMG_URL } from "../config";
 import { useParams } from "react-router";
 import Shimmer from "./Shimmer";
 import useResturauntHook from "../utils/useResturauntsHook";
+import { useDispatch } from "react-redux";
+import { addItems } from "../utils/cartSlice";
 
 const RestaurantDetails = () => {
   const { id } = useParams();
+
+  const dispatch = useDispatch();
+
+  const addItemsToCart = (dish) => {
+    dispatch(addItems(dish));
+  };
 
   const restaurantData = useResturauntHook(id);
 
@@ -36,6 +44,26 @@ const RestaurantDetails = () => {
         <p className="text-gray-600">
           {restaurantData?.data?.cards[0]?.card?.card?.info?.city}
         </p>
+        <ul className="space-y-4 border rounded-lg shadow-md p-4">
+          {restaurantData.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1]?.card?.card?.carousel?.map(
+            (card) => (
+              <li
+                key={card.dish.info.id}
+                className="flex items-center justify-between"
+              >
+                <span>{card.dish.info.name}</span>
+                <button
+                  className="bg-green-500 text-white px-2 py-1 rounded"
+                  onClick={() => {
+                    addItemsToCart(card);
+                  }}
+                >
+                  Add to Cart
+                </button>
+              </li>
+            )
+          )}
+        </ul>
       </div>
     </div>
   );
