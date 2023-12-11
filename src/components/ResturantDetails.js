@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import Shimmer from "./Shimmer";
 import useResturauntHook from "../utils/useResturauntsHook";
 import { useDispatch } from "react-redux";
-import { addItems } from "../utils/cartSlice";
+import { addItems, removeItems } from "../utils/cartSlice";
 
 const RestaurantDetails = () => {
   const { id } = useParams();
@@ -12,6 +12,10 @@ const RestaurantDetails = () => {
 
   const addItemsToCart = (dish) => {
     dispatch(addItems(dish));
+  };
+
+  const removeItemsFromCart = (dish) => {
+    dispatch(removeItems(dish));
   };
 
   const restaurantData = useResturauntHook(id);
@@ -52,14 +56,24 @@ const RestaurantDetails = () => {
                 className="flex items-center justify-between"
               >
                 <span>{card.dish.info.name}</span>
-                <button
-                  className="bg-green-500 text-white px-2 py-1 rounded"
-                  onClick={() => {
-                    addItemsToCart(card);
-                  }}
-                >
-                  Add to Cart
-                </button>
+                <div className="flex content-between">
+                  <button
+                    className="bg-green-500 text-white px-2 py-1 rounded"
+                    onClick={() => {
+                      addItemsToCart(card);
+                    }}
+                  >
+                    Add to Cart
+                  </button>
+                  <button
+                    className="bg-red-500 text-white px-2 py-1 rounded"
+                    onClick={() => {
+                      removeItemsFromCart(card);
+                    }}
+                  >
+                    Remove From Cart
+                  </button>
+                </div>
               </li>
             )
           )}
