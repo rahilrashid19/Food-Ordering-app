@@ -22,14 +22,14 @@ const BodyComponent = () => {
   async function getResturants() {
     const data = await fetch(GET_RESTURAUNT_CARDS);
 
-    const json = await data.json();
+    const json = await data?.json();
 
     setResturants(
-      json?.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
 
     setFlterResturants(
-      json?.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   }
 
@@ -42,6 +42,7 @@ const BodyComponent = () => {
           name="search-fltr"
           placeholder="Search"
           value={searchText}
+          data-testid="search-input"
           onChange={(e) => {
             setSearchText(e.target.value);
           }}
@@ -93,7 +94,7 @@ const BodyComponent = () => {
       {flterResturants?.length === 0 ? (
         <Shimmer />
       ) : (
-        <div className="resturant-cards min-h-[61vh]">
+        <div className="resturant-cards min-h-[61vh]" data-testid="card">
           {flterResturants?.map((res) => {
             return (
               <Link to={"/resturant/" + res.info.id} key={res.info.id}>

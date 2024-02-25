@@ -27,7 +27,7 @@ const RestaurantDetails = () => {
           <img
             src={
               CDN_IMG_URL +
-              restaurantData?.data?.cards[0]?.card?.card?.info
+              restaurantData?.data?.cards[2]?.card?.card?.info
                 ?.cloudinaryImageId
             }
             alt=""
@@ -35,26 +35,26 @@ const RestaurantDetails = () => {
           />
           <div className="p-4 md:w-1/2">
             <h1 className="text-2xl font-bold mb-2">
-              {restaurantData?.data?.cards[0]?.card?.card?.info?.name}
+              {restaurantData?.data?.cards[2]?.card?.card?.info?.name}
             </h1>
             <p className="text-gray-600 mb-2">
               {
-                restaurantData?.data?.cards[0]?.card?.card?.info
+                restaurantData?.data?.cards[2]?.card?.card?.info
                   ?.costForTwoMessage
               }
             </p>
             <p className="text-gray-600 mb-2">
-              {restaurantData?.data?.cards[0]?.card?.card?.info?.areaName}
+              {restaurantData?.data?.cards[2]?.card?.card?.info?.areaName}
             </p>
             <p className="text-yellow-500 mb-2">
-              {restaurantData?.data?.cards[0]?.card?.card?.info?.avgRating}{" "}
+              {restaurantData?.data?.cards[2]?.card?.card?.info?.avgRating}{" "}
               stars
             </p>
             <p className="text-gray-600">
-              {restaurantData?.data?.cards[0]?.card?.card?.info?.city}
+              {restaurantData?.data?.cards[2]?.card?.card?.info?.city}
             </p>
 
-            {restaurantData.data.cards[2].groupedCard.cardGroupMap.REGULAR
+            {/* {restaurantData.data.cards[2].groupedCard.cardGroupMap.REGULAR
               .cards[1]?.card?.card?.carousel?.length > 0 ? (
               <ul className="space-y-4 border rounded-lg shadow-md p-4">
                 {restaurantData.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1]?.card?.card?.carousel?.map(
@@ -88,7 +88,7 @@ const RestaurantDetails = () => {
               </ul>
             ) : (
               <p className="text-gray-600 mt-4">No menu available.</p>
-            )}
+            )} */}
           </div>
         </div>
       )}
